@@ -1,0 +1,21 @@
+extends ../layout/layout.pug
+
+block content
+  .main.container
+    .row
+      .col-md-12
+        h2.card-title.text-center Bars - courtesy of Yelp!
+        if bars
+          ul.list-group
+            each bar in bars
+              -bar_id = bar._id
+              li.list-group-item
+                .row
+                  .col-md-4
+                    .figure
+                      a(href=bar.url)
+                        img.img-fluid.figure-img.rounded(src=bar.image_url)
+                      h2.figure-caption.text-center=bar.name
+                  .col-md-6
+                    form(action=href='/api/bars/' + bar_id + '/patrons' method='post')
+                      button.bar(type="submit" id=bar_id)=`${bar.patrons.length} Going`

@@ -1,0 +1,46 @@
+{
+  "name": "stockchart-app",
+  "version": "1.0.0",
+  "description": "FCC Stock Chart App",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "npm": "5.0.4",
+    "node": "4.1.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.0",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4",
+    "pug": "^2.0.0-rc.2",
+    "pug-bootstrap": "0.0.15",
+    "yelp-fusion": "^1.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.4.2",
+    "passport-stub": "^1.1.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SCA2/stockchart-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SCA2/stockchart-app/issues"
+  },
+  "homepage": "https://github.com/SCA2/stockchart-app#readme"
+}
