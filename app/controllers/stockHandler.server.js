@@ -2,6 +2,7 @@
 
 var User = require('../models/user');
 var Bar = require('../models/bar');
+var configAuth = require('./auth');
 
 function barHandler() {
   this.searchBars = (req, res) => {

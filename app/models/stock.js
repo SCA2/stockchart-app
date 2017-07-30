@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Bar = new Schema({
+var Stock = new Schema({
   name: String,
   id: String,
   url: String,
@@ -20,7 +20,7 @@ var Bar = new Schema({
   patrons: [Schema.Types.ObjectId]
 });
 
-Bar.methods.togglePatron = function(patron, cb) {
+Stock.methods.togglePatron = function(patron, cb) {
   if(this.patrons.indexOf(patron._id) == -1) {
     this.addPatron(patron, cb);
   } else {
@@ -28,7 +28,7 @@ Bar.methods.togglePatron = function(patron, cb) {
   }
 }
 
-Bar.methods.addPatron = function(patron, cb) {
+Stock.methods.addPatron = function(patron, cb) {
   const model = this;
   model.patrons.addToSet(patron._id);
   model.save(function(err) {
@@ -37,7 +37,7 @@ Bar.methods.addPatron = function(patron, cb) {
   });
 }
 
-Bar.methods.removePatron = function(patron, cb) {
+Stock.methods.removePatron = function(patron, cb) {
   const model = this;
   model.patrons.pull({ _id: patron._id});
   model.save(function(err) {
@@ -46,11 +46,11 @@ Bar.methods.removePatron = function(patron, cb) {
   });
 }
 
-Bar.methods.getPatronCount = function() {
+Stock.methods.getPatronCount = function() {
   return this.patrons.length;
 }
 
-Bar.statics.searchBars = function(location, cb) {
+Stock.statics.searchBars = function(location, cb) {
   const yelp = require('yelp-fusion');
   const clientId = process.env.YELP_KEY;
   const clientSecret = process.env.YELP_SECRET;
@@ -108,19 +108,19 @@ Bar.statics.searchBars = function(location, cb) {
   });
 }
 
-Bar.statics.getBars = function(location, cb) {
+Stock.statics.getBars = function(location, cb) {
   location = location.trim();
   let city = location.split(/,\s*|\s+/)[0];
   let state = location.split(/,\s*|\s+/)[1];
   if(state === undefined) {
-    Bar
+    Stock
       .find({ 'location.zip_code': '15217'})
       .exec(function (err, bars) {
         if (err) { throw err; }
         cb(bars);
       });
   } else {
-    Bar
+    Stock
       .find({ 'location.city': city, 'location.state': state })
       .exec(function (err, bars) {
         if (err) { throw err; }
@@ -129,6 +129,6 @@ Bar.statics.getBars = function(location, cb) {
   }
 }
 
-module.exports = mongoose.model('Bar', Bar);
+module.exports = mongoose.model('Stock', Stock);
 
 
