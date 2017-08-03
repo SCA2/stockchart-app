@@ -1,212 +1,197 @@
 'use strict';
 
-process.env.NODE_ENV = 'test';
+process.env.NODE_ENV = 'TEST';
 
 const mongoose = require('mongoose');
-const User = require('../app/models/user');
-const Bar = require('../app/models/bar');
+const Stock = require('../app/models/stock');
+
+const apiTestData = require('./apiTestData.json');
+const apiTestPrices = require('./apiTestPrices.json');
 
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const passportStub = require('passport-stub');
 
 const server = require('../server');
 const expect = chai.expect;
 
 chai.use(chaiHttp);
-passportStub.install(server);
 
-describe('Bar', () => {
+describe('Stock', () => {
 
-  var bar, patron, patron_2;
+  var stock;
 
-  beforeEach(() => {
-    bar = new Bar({
-      name: 'Firefly',
-      id: '1',
-      patrons: []
-    });
-
-    patron = new User({
-      github: {
-        id: '1234',
-        displayName: 'Joe Tester',
-        username: 'username',
+  beforeEach(done => {
+    Stock.count({}, (err, count) => {
+      if(count > 0) {
+        console.log('Deleting ' + count + ' stocks...');
+        Stock.remove({}, (err, raw) => {
+          console.log('Mongo: ' + raw);
+          Stock.count({}, (err, count) => {
+            console.log('Stocks at start: ' + count);
+          });
+        });
       }
-    });
 
-    patron_2 = new User({
-      github: {
-        id: '2345',
-        displayName: 'Eric Tester',
-        username: 'username2',
-      }
+      stock = new Stock({
+        name: 'Apple',
+        ticker: 'AAPL',
+        prices: []
+      });
+
+      stock.save();
+      done();         
     });
   });
 
   describe('instance', () => {
+    it('starts with one stock in the database', done => {
+      Stock.count({}, (err, count) => {
+        expect(count).to.eql(1);
+        done();         
+      })
+    });
+
     it('has a name', done => {
-      expect(bar.name).to.eql('Firefly');
+      expect(stock.name).to.eql('Apple');
       done();
     });
 
-    it('has an id', done => {
-      expect(bar.id).to.eql('1');
+    it('has a ticker', done => {
+      expect(stock.ticker).to.eql('AAPL');
       done();
     });
 
-    it('has an empty list of patrons', done => {
-      expect(bar.patrons).to.eql([]);
+    it('has an empty list of prices', done => {
+      expect(stock.prices).to.eql([]);
       done();
     });
 
-    it('can add a patron', done => {
-      bar.addPatron(patron);
-      expect(bar.patrons[0].equals(patron._id));
-      done();
-    });
-
-    it('can remove a patron', done => {
-      bar.addPatron(patron);
-      bar.removePatron(patron);
-      expect(bar.patrons).to.eql([]);
-      done();
-    });
-
-    it('removes correct patron', done => {
-      bar.addPatron(patron);
-      bar.addPatron(patron_2);
-      bar.removePatron(patron);
-      expect(bar.patronCount()).to.eql(1);
-      expect(bar.patrons[0].equals(patron_2._id)).to.be.true;
-      done();
-    });
-
-    it('can return number of patrons', done => {
-      expect(bar.patronCount()).to.eql(0);
-      bar.addPatron(patron);
-      expect(bar.patronCount()).to.eql(1);
-      done();
-    });
-  });
-
-  // describe('class', () => {
-  //   it.only('can find local bars', done => {
-  //     var barCount = 0;
-  //     Bar.findLocalBars('oakland, ca', () => {
-  //       Bar.count({}, (err, count) => {
-  //         barCount = count;
-  //         console.log(barCount);
-  //       });
-  //       expect(barCount).to.be.gt(0);
-  //       done();
-  //     });
-  //   });
-  // });
-});
-
-describe('API', () => {
-
-  var bar, patron, patron_2;
-
-  beforeEach(() => {
-    bar = new Bar({
-      name: 'Firefly',
-      id: '1',
-      image: 'url',
-      patrons: []
-    });
-
-    patron = new User({
-      github: {
-        id: '1234',
-        displayName: 'Joe Tester',
-        username: 'username'
-      }
-    });
-
-    patron_2 = new User({
-      github: {
-        id: '2345',
-        displayName: 'Eric Tester',
-        username: 'username2'
-      }
-    });
-
-    bar.addPatron(patron, () => {});
-  });
-
-  afterEach(() => {
-    patron.remove();
-    patron_2.remove();
-    bar.remove();
-    passportStub.logout();
-  });
-
-  describe('/profile', () => {
-    it('redirects to /login if user not logged in', (done) => {
-      chai.request(server)
-      .get('/profile')
-      .redirects(0)
-      .end((err, res) => {
-        expect(res).to.redirect;
-        expect(res.header.location).to.eql('/login');
+    it('can update prices', done => {
+      stock.updatePrices(apiTestPrices, doc => {
+        expect(doc.prices[0]).to.eql(apiTestPrices[0]);
         done();
       });
     });
 
-    it('GETs a logged-in user profile', (done) => {
-      passportStub.login( patron );
-      chai.request(server)
-      .get('/profile')
-      .end((err, res) => {
-        expect(res.status).to.eql(200);
-        expect(res.type).to.eql('text/html');
+    it.skip('can get price data from intrinio', done => {
+      stock.getPrices(apiData => {
+        expect(apiData[0].close).to.eql(apiTestData[0].close);
         done();
       });
     });
   });
 
-  describe('/api/bars', () => {
-    it('GETs all of the bars', (done) => {
-      chai.request(server)
-      .get('/api/bars')
-      .end((err, res) => {
-        expect(res.text).to.include('Firefly');
-        done();
-      });
-    });
-  });
 
-  describe('/api/bars/:bar_id/patrons', () => {
-    it('gets patron count for bar_id', (done) => {
-      chai.request(server)
-      .get('/api/bars/' + bar._id + '/patrons')
-      .end((err, res) => {
-        expect(res.body).to.equal(1);
-        expect(bar.getPatronCount()).to.equal(1);
+  describe('class', () => {
+    it('starts with one stock in the database', done => {
+      Stock.count({}, (err, count) => {
+        expect(count).to.eql(1);
         done();
+      })
+    });
+
+    it('can create a stock', done => {
+      Stock.createStock('FNSR', stock => {
+        expect(stock.ticker).to.eql('FNSR');
+        Stock.count({}, (err, count) => {
+          expect(count).to.eql(2)
+          done();
+        });
       });
     });
 
-    it.only('adds a patron to :bar_id', (done) => {
-      passportStub.login(patron_2);
-      chai.request(server)
-      .post('/api/bars/' + bar._id + '/patrons')
-      .end((err, res) => {
-        expect(res.body).to.equal(2);
-        done();
-      });
-    });
-
-    it('removes a patron from :bar_id', (done) => {
-      passportStub.login(patron);
-      chai.request(server)
-      .delete('/api/bars/' + bar._id + '/patrons')
-      .end((err, res) => {
-        expect(bar.getPatronCount()).to.equal(1);
-        done();
+    it('can delete a stock', done => {
+      Stock.deleteStock(stock, stock => {
+        expect(stock.ticker).to.eql('AAPL');
+        Stock.count({}, (err, count) => {
+          expect(count).to.eql(0)
+          done();
+        });
       });
     });
   });
 });
+
+// describe('API', () => {
+
+//   var stock, patron, patron_2;
+
+//   beforeEach(() => {
+//     stock = new Stock({
+//       name: 'Microsoft',
+//       ticker: 'MSFT',
+//       prices: [1, 2, 3]
+//     });
+//   });
+
+//   afterEach(() => {
+//     stock.remove();
+//   });
+
+//   describe('/profile', () => {
+//     it('redirects to /login if user not logged in', (done) => {
+//       chai.request(server)
+//       .get('/profile')
+//       .redirects(0)
+//       .end((err, res) => {
+//         expect(res).to.redirect;
+//         expect(res.header.location).to.eql('/login');
+//         done();
+//       });
+//     });
+
+//     it('GETs a logged-in user profile', (done) => {
+//       passportStub.login( patron );
+//       chai.request(server)
+//       .get('/profile')
+//       .end((err, res) => {
+//         expect(res.status).to.eql(200);
+//         expect(res.type).to.eql('text/html');
+//         done();
+//       });
+//     });
+//   });
+
+//   describe('/api/bars', () => {
+//     it('GETs all of the bars', (done) => {
+//       chai.request(server)
+//       .get('/api/bars')
+//       .end((err, res) => {
+//         expect(res.text).to.include('Firefly');
+//         done();
+//       });
+//     });
+//   });
+
+//   describe('/api/bars/:bar_id/prices', () => {
+//     it('gets patron count for bar_id', (done) => {
+//       chai.request(server)
+//       .get('/api/bars/' + stock._id + '/prices')
+//       .end((err, res) => {
+//         expect(res.body).to.equal(1);
+//         expect(stock.getPatronCount()).to.equal(1);
+//         done();
+//       });
+//     });
+
+//     it('adds a patron to :bar_id', (done) => {
+//       passportStub.login(patron_2);
+//       chai.request(server)
+//       .post('/api/bars/' + stock._id + '/prices')
+//       .end((err, res) => {
+//         expect(res.body).to.equal(2);
+//         done();
+//       });
+//     });
+
+//     it('removes a patron from :bar_id', (done) => {
+//       passportStub.login(patron);
+//       chai.request(server)
+//       .delete('/api/bars/' + stock._id + '/prices')
+//       .end((err, res) => {
+//         expect(stock.getPatronCount()).to.equal(1);
+//         done();
+//       });
+//     });
+//   });
+// });

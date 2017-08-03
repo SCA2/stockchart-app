@@ -1,0 +1,17 @@
+extends ../layout/layout.pug
+
+block content
+  .main.container
+    .row
+      .col-md-12
+        #container(style="height: 400px; min-width: 310px")
+        if stocks
+          .card-group
+            each stock in stocks
+              -stock_id = stock._id
+              .card
+                .card-block
+                  form(action='/api/stocks/' + stock_id + '?_method=DELETE' method='POST')
+                    button.close(type="submit" aria-label="Close")
+                      span(aria-hidden="true") &times;
+                    h6=stock.ticker

@@ -12,7 +12,11 @@ var methodOverride = require('method-override');
 
 require('dotenv').load();
 
-mongoose.connect(process.env.MONGODB_URI);
+if(process.env.NODE_ENV == 'TEST')
+  mongoose.connect(process.env.TESTDB_URI);
+else
+  mongoose.connect(process.env.MONGODB_URI);
+
 mongoose.Promise = global.Promise;
 
 app.set('view engine', 'pug');
@@ -32,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
-routes(app, passport);
+routes(app);
 
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {

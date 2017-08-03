@@ -5,128 +5,111 @@ var Schema = mongoose.Schema;
 
 var Stock = new Schema({
   name: String,
-  id: String,
-  url: String,
-  image_url: String,
-  location: {
-    address1: String,
-    address2: String,
-    address3: String,
-    city: String,
-    zip_code: String,
-    country: String,
-    state: String
-  },
-  patrons: [Schema.Types.ObjectId]
+  ticker: String,
+  prices: [[Schema.Types.Number, Schema.Types.Number]]
 });
 
-Stock.methods.togglePatron = function(patron, cb) {
-  if(this.patrons.indexOf(patron._id) == -1) {
-    this.addPatron(patron, cb);
-  } else {
-    this.removePatron(patron, cb);
-  }
-}
-
-Stock.methods.addPatron = function(patron, cb) {
-  const model = this;
-  model.patrons.addToSet(patron._id);
-  model.save(function(err) {
-    if(err) throw err;
-    cb(model.patrons.length);
-  });
-}
-
-Stock.methods.removePatron = function(patron, cb) {
-  const model = this;
-  model.patrons.pull({ _id: patron._id});
-  model.save(function(err) {
-    if(err) throw err;
-    cb(model.patrons.length);
-  });
-}
-
-Stock.methods.getPatronCount = function() {
-  return this.patrons.length;
-}
-
-Stock.statics.searchBars = function(location, cb) {
-  const yelp = require('yelp-fusion');
-  const clientId = process.env.YELP_KEY;
-  const clientSecret = process.env.YELP_SECRET;
-  const model = this;
-
-  const searchRequest = {
-    term: 'bar',
-    location: location
-  };
-
+Stock.statics.getStocks = function(cb) {
   function compare(a, b) {
-    a = a.name.toUpperCase(); // ignore upper and lowercase
-    b = b.name.toUpperCase(); // ignore upper and lowercase
+    a = a.ticker.toUpperCase();
+    b = b.ticker.toUpperCase();
     if (a < b) { return -1; }
     if (a > b) { return 1; }
     return 0;
   };
 
-  yelp.accessToken(clientId, clientSecret).then(response => {
-    const client = yelp.client(response.jsonBody.access_token);
-    let bars = [];
-    client.search(searchRequest).then(response => {
-      response.jsonBody.businesses.forEach((business, index, array) => {
-        model.findOneAndUpdate(
-          { 'id': business.id },
-          { $set: {
-            'id'        : business.id,
-            'name'      : business.name,
-            'url'       : business.url,
-            'image_url' : business.image_url,
-            'location'  : {
-              'address1': business.location.address1,
-              'address2': business.location.address2,
-              'address3': business.location.address3,
-              'city'    : business.location.city,
-              'zip_code': business.location.zip_code,
-              'country' : business.location.country,
-              'state'   : business.location.state
-            }
-          } },
-          { upsert: true, new: true },
-          (err, bar) => {
-            if(err) { console.log('mongoose error: ' + e) }
-            bars.push(bar);
-            if(index == (array.length - 1)) {
-              bars = bars.sort(compare);
-              cb(bars);
-            }
-          }
-        );
-      });
+  this
+    .find({})
+    .exec(function (err, stocks) {
+      if (err) { throw err; }
+      cb(stocks);
     });
-  }).catch(e => {
-    console.log('yelp error: ' + e);
+}
+
+Stock.statics.createStock = function(ticker, cb) {
+  console.log('create ticker: ' + ticker)
+  this.create({ticker: ticker}, (err, stock) => {
+    if(err) throw err;
+    cb(stock);
   });
 }
 
-Stock.statics.getBars = function(location, cb) {
-  location = location.trim();
-  let city = location.split(/,\s*|\s+/)[0];
-  let state = location.split(/,\s*|\s+/)[1];
-  if(state === undefined) {
-    Stock
-      .find({ 'location.zip_code': '15217'})
-      .exec(function (err, bars) {
-        if (err) { throw err; }
-        cb(bars);
-      });
-  } else {
-    Stock
-      .find({ 'location.city': city, 'location.state': state })
-      .exec(function (err, bars) {
-        if (err) { throw err; }
-        cb(bars);
-      });
+Stock.statics.deleteStock = function(id, cb) {
+  console.log('delete id: ' + id)
+  this.findOneAndRemove({_id: id}, (err, stock) => {
+    if(err) throw err;
+    cb(stock);
+  });
+}
+
+Stock.methods.updatePrices = function(prices, cb) {
+  this.model(this.constructor.modelName).findOneAndUpdate(
+    { ticker: this.ticker },
+    { $set: { prices: prices } },
+    { new: true },
+    (err, doc) => {
+      if(err) { console.log('mongoose error: ' + err) }
+      cb(doc);
+    }
+  );
+}
+
+Stock.methods.filterPriceData = function(apiPriceData, cb) {
+  let filtered = apiPriceData.map(price => {
+    return [new Date(price.date).getTime(), price.close]
+  });
+  cb(filtered);
+}
+
+Stock.methods.getPriceData = function(cb) {
+  const model = this;
+  const https = require("https");
+
+  const username = process.env.INTRINIO_USERNAME;
+  const password = process.env.INTRINIO_PASSWORD;
+  const auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
+
+  let date = new Date(Date.now());
+  date.setFullYear(date.getFullYear() - 1);
+  let startDate = date.toISOString().substr(0, 10);
+
+  let path = "/prices?identifier=" + this.ticker + '&start_date=' + startDate + '&sort_order=asc';
+
+  function intrinioRequest(page, cb) {
+    var request = https.request(
+      {
+        method: "GET",
+        host: "api.intrinio.com",
+        path: path + '&page_number=' + page,
+        headers: { "Authorization": auth }
+      },
+      function(response) {
+        var json = "";
+        response.on('data', chunk => { json += chunk });
+        response.on('end', () => {
+          var data = JSON.parse(json);
+          cb(data);
+        });
+      }
+    );
+    request.end();
   }
+  
+  let pageCount = 0;
+  let apiPriceData = [];
+
+  [1,2,3].forEach(page => {
+    intrinioRequest(page, chunk => {
+      pageCount += 1;
+      apiPriceData = apiPriceData.concat(chunk.data);
+      if(pageCount == 3) {
+        apiPriceData = apiPriceData.sort(
+          (a, b) => { return new Date(a.date) - new Date(b.date) }
+        );
+        cb(apiPriceData)
+      }
+    })
+  });
 }
 
 module.exports = mongoose.model('Stock', Stock);

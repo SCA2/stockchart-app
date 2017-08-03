@@ -1,60 +1,51 @@
 'use strict';
 
-var User = require('../models/user');
-var Bar = require('../models/bar');
-var configAuth = require('./auth');
+var Stock = require('../models/stock');
 
-function barHandler() {
-  this.searchBars = (req, res) => {
-    let location = '94612';
-    if(req.body.location) { location = req.body.location }
-    else if(req.session.lastLocation) { location = req.session.lastLocation };
-    req.session.lastLocation = location;
-    Bar.searchBars(location, (bars) => {
-      res.render('../views/bars/index.pug', { bars: bars });
+function stockHandler() {
+  this.index = (req, res) => {
+    Stock.getStocks(stocks => {
+      res.render('../views/stocks/index.pug', { stocks: stocks });
     });
   };
 
-  this.getPatronCount = (req, res) => {
-    Bar
-      .findById(req.params.bar_id, (err, bar) => {
-        if(err) throw err;
-        res.json(bar.getPatronCount());
-      })
-  };
-
-  this.togglePatron = (req, res) => {
-    Bar
-      .findById(req.params.bar_id, (err, bar) => {
-        if(err) throw err;
-        bar.togglePatron(req.user, patronCount => {
-          res.json(patronCount);
+  this.createStock = (req, res) => {
+    console.log(req.body.ticker);
+    Stock
+      .createStock(req.body.ticker, (stock) => {
+        stock.getPriceData(apiPriceData => {
+          stock.filterPriceData(apiPriceData, prices => {
+            stock.updatePrices(prices, stock => {
+              // console.log(stock.prices)
+              res.redirect('/index');
+            })
+          })
         });
       });
   };
 
-  this.addPatron = (req, res) => {
-    Bar
-      .findById(req.params.bar_id, (err, bar) => {
-        if(err) throw err;
-        bar.addPatron(req.user, patronCount => {
-          res.json(patronCount);
-        });
+  this.deleteStock = (req, res) => {
+    console.log('in deleteStock');
+    Stock
+      .deleteStock(req.params.stock_id, stock => {
+        console.log('deleted ' + stock.ticker);
+        res.redirect('/index');
       });
   };
 
-  this.removePatron = (req, res) => {
-    if(!req.user) { res.end(); return; }
-    Bar
-      .findById(req.params.bar_id, (err, bar) => {
-        if(err) throw err;
-        bar.removePatron(req.user);
-        bar.save(err => {
-          if(err) throw err;
-          res.json(bar.getPatronCount());
-        });
-      });
+  this.getStocks = (req, res) => {
+    console.log('in getStocks');
+    Stock.getStocks(stocks => {
+      res.json(stocks);
+    });
+  };
+
+  this.getPriceData = (req, res) => {
+    console.log('in getPriceData');
+    Stock.findOne(req.body.ticker, stock => {
+      res.json(stock.prices)
+    })
   };
 }
 
-module.exports = barHandler;
+module.exports = stockHandler;

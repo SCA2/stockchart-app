@@ -1,0 +1,1282 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sea",
+				"searchBars"
+			],
+			[
+				"log",
+				"loginUrl"
+			],
+			[
+				"aja",
+				"ajaxRequest"
+			],
+			[
+				"pa",
+				"patronCount"
+			],
+			[
+				"da",
+				"dark-contrast"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"option",
+				"option_id〔variable〕"
+			],
+			[
+				"op",
+				"option_id"
+			],
+			[
+				"opt",
+				"option_id〔variable〕"
+			],
+			[
+				"fir",
+				"first_active_option"
+			],
+			[
+				"model",
+				"model_sort_order"
+			],
+			[
+				"purcha",
+				"purchased_at"
+			],
+			[
+				"billing",
+				"billing_address〔function〕"
+			],
+			[
+				"shi",
+				"shipped_at"
+			],
+			[
+				"succ",
+				"successful_transactions"
+			],
+			[
+				"expr",
+				"express_token"
+			],
+			[
+				"session",
+				"session_params"
+			],
+			[
+				"token",
+				"token_name"
+			],
+			[
+				"pas",
+				"password_confirmation"
+			],
+			[
+				"pass",
+				"password_confirmation"
+			],
+			[
+				"Inv",
+				"InvoiceValidator"
+			],
+			[
+				"new",
+				"new_invoice"
+			],
+			[
+				"ex",
+				"express_token"
+			],
+			[
+				"suc",
+				"successful"
+			],
+			[
+				"shipp",
+				"shipped_at"
+			],
+			[
+				"shipped",
+				"shipped_at"
+			],
+			[
+				"tra",
+				"tracking_number"
+			],
+			[
+				"1",
+				"1ZYZV2830000000"
+			],
+			[
+				"carr",
+				"carrier_name"
+			],
+			[
+				"addre",
+				"address_type"
+			],
+			[
+				"or",
+				"orders_path"
+			],
+			[
+				"tr",
+				"tracking_number"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"en",
+				"environment"
+			],
+			[
+				"change",
+				"change_by"
+			],
+			[
+				"be",
+				"be_successful"
+			],
+			[
+				"brow",
+				"brown-40"
+			],
+			[
+				"purch",
+				"purchased_at"
+			],
+			[
+				"li",
+				"limiting_stock"
+			],
+			[
+				"common",
+				"common_stock"
+			],
+			[
+				"bom",
+				"boms.id"
+			],
+			[
+				"get",
+				"get_common_stock_items"
+			],
+			[
+				"pro",
+				"prod_1"
+			],
+			[
+				"pr",
+				"prod_1"
+			],
+			[
+				"select",
+				"select_option"
+			],
+			[
+				"k",
+				"kf_2h"
+			],
+			[
+				"in",
+				"inv_calc"
+			],
+			[
+				"is",
+				"is_assembled"
+			],
+			[
+				"C",
+				"CardTokenizer"
+			],
+			[
+				"comp",
+				"component_id"
+			],
+			[
+				"kf",
+				"kf_2s"
+			],
+			[
+				"err",
+				"error_message"
+			],
+			[
+				"order",
+				"order_params〔function〕"
+			],
+			[
+				"str",
+				"stripe_purchase_options〔function〕"
+			],
+			[
+				"pay",
+				"payable?〔function〕"
+			],
+			[
+				"user",
+				"userPostalCode"
+			],
+			[
+				"smoo",
+				"webkit-font-smoothing"
+			],
+			[
+				"st",
+				"stripe_token"
+			],
+			[
+				"strip",
+				"stripe_token〔argument〕"
+			],
+			[
+				"hid",
+				"hiddenInput〔variable〕"
+			],
+			[
+				"stri",
+				"stripeTokenHandler"
+			],
+			[
+				"S",
+				"STRIPE_PUBLIC_KEY"
+			],
+			[
+				"imp",
+				"imported_components"
+			],
+			[
+				"im",
+				"imported_bom_items"
+			],
+			[
+				"find",
+				"find_or_create_bom_item"
+			],
+			[
+				"imported_b",
+				"imported_bom_items"
+			],
+			[
+				"F",
+				"FIRST_COMPONENT_ROW"
+			],
+			[
+				"find_",
+				"find_or_create_component"
+			],
+			[
+				"importe",
+				"imported_components"
+			],
+			[
+				"se",
+				"selected_product"
+			],
+			[
+				"sele",
+				"select_sheet〔function〕"
+			],
+			[
+				"attr",
+				"attributes"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"product",
+				"product_id"
+			],
+			[
+				"prod",
+				"product_category"
+			],
+			[
+				"produc",
+				"product_category"
+			],
+			[
+				"dele",
+				"delete_orphans"
+			],
+			[
+				"vali",
+				"valid_attributes"
+			],
+			[
+				"part",
+				"partial_stock"
+			],
+			[
+				"kit",
+				"kit_stock"
+			],
+			[
+				"opti",
+				"option_editor"
+			],
+			[
+				"to",
+				"to_sym"
+			],
+			[
+				"produ",
+				"product_id"
+			],
+			[
+				"edi",
+				"editor_params"
+			],
+			[
+				"com",
+				"common_stock_count"
+			],
+			[
+				"asse",
+				"assembled_stock"
+			],
+			[
+				"assem",
+				"assembled_to_make"
+			],
+			[
+				"sh",
+				"shipping_weight"
+			],
+			[
+				"val",
+				"validate_stock"
+			],
+			[
+				"valid",
+				"validate_stock"
+			],
+			[
+				"upd",
+				"update_kit_stock"
+			],
+			[
+				"product_sto",
+				"product_stock_items"
+			],
+			[
+				"va",
+				"validate"
+			],
+			[
+				"optio",
+				"option_params"
+			],
+			[
+				"min",
+				"min_stock"
+			],
+			[
+				"par",
+				"partial_stock"
+			],
+			[
+				"compon",
+				"component_id"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"b",
+				"build_stubbed"
+			],
+			[
+				"tex",
+				"textSelected"
+			],
+			[
+				"update",
+				"update_option"
+			],
+			[
+				"sel",
+				"selected_option"
+			],
+			[
+				"align",
+				"text-align"
+			],
+			[
+				"items",
+				"items_attributes"
+			],
+			[
+				"compo",
+				"component"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"get_pr",
+				"get_product_categories"
+			],
+			[
+				"mfr",
+				"mfr_part_number"
+			],
+			[
+				"bom_",
+				"bom_item"
+			],
+			[
+				"cons",
+				"constant_address_US"
+			],
+			[
+				"tota",
+				"total_volume"
+			],
+			[
+				"max",
+				"max_dimensioni"
+			],
+			[
+				"tax",
+				"tax_withheld"
+			],
+			[
+				"excluded",
+				"excluded_sales"
+			],
+			[
+				"have",
+				"have_content"
+			],
+			[
+				"click",
+				"click_link"
+			],
+			[
+				"tax_",
+				"taxable_orders"
+			],
+			[
+				"P",
+				"PaypalRedirector"
+			],
+			[
+				"sig",
+				"signin_path"
+			],
+			[
+				"card",
+				"card_verification"
+			],
+			[
+				"set_ex",
+				"set_express_addresses"
+			],
+			[
+				"su",
+				"success"
+			],
+			[
+				"add",
+				"addresses"
+			],
+			[
+				"bi",
+				"billing_address"
+			],
+			[
+				"sa",
+				"sales_tax"
+			],
+			[
+				"ip",
+				"ip_address"
+			],
+			[
+				"set_c",
+				"set_checkout_cart"
+			],
+			[
+				"accept",
+				"accept_terms"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 1113,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/etc/systemd/system/mongodb.service",
+			"settings":
+			{
+				"buffer_size": 219,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes/index.js",
+			"settings":
+			{
+				"buffer_size": 540,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/stockHandler.server.js",
+			"settings":
+			{
+				"buffer_size": 831,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/stockController.client.js",
+			"settings":
+			{
+				"buffer_size": 2358,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/stock.js",
+			"settings":
+			{
+				"buffer_size": 2636,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layout/layout.pug",
+			"settings":
+			{
+				"buffer_size": 968,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/config",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/controllers",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/models",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/routes",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/views",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/views/layout",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/public",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/public/css"
+	],
+	"file_history":
+	[
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/views/bars/index.pug",
+		"/etc/systemd/system/mongodb.service",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/app/views/layout/navbar.pug",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/.gitignore",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/package.json",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/.env",
+		"/media/tpryan/Applications/FreeCodeCamp/stockchart-app/.git/MERGE_MSG",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/models/bar.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/controllers/barHandler.server.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/.env",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/server.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/test/test.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/routes/index.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/controllers/voteController.client.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/common/ajax-functions.js",
+		"/media/tpryan/Applications/FreeCodeCamp/voting-app/.env",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/views/layout/navbar.pug",
+		"/media/tpryan/Applications/FreeCodeCamp/voting-app/app/routes/index.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/views/bars/index.pug",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/views/layout/layout.pug",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/public/css/main.css",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/config/passport.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/models/user.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/views/users/profile.pug",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/config/auth.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/package.json",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/views/bars/show.pug",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/README.md",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/controllers/pollHandler.server.js",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/.gitignore",
+		"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/package-lock.json",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/services/card_tokenizer.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/assets/javascripts/stripe_load.js",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/services/stripe_wrapper_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/checkout_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/checkout/payment/_payment_form.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/services/order_purchaser.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/services/card_tokenizer_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/services/stripe_wrapper.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/db/schema.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/fixtures/vcr_cassettes/standard/stripe_checkout_as_a_guest.yml",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/services/order_purchaser_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/controllers/orders_controller.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/order.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/server.txt",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/models/order_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/controllers/orders_controller_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/db/backup.sh",
+		"/media/tpryan/Applications/RailsProjects/SCA/.gitignore",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/assets/stylesheets/orders.scss",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/admin_dashboard_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/assets/stylesheets/packing_slips.scss",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/packing_slip.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_packing_cart.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/assets/javascripts/orders.js",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_packing_address.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_packing_slip.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_company_info.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/show.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/config/routes.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/options/_option.html.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/option.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/product.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/controllers/products_controller.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/requests/products_controller_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/helpers/options_helper.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/products/update_option.js.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_orders.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/controllers/checkout/transactions_controller.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/json/valid_stripe_event.json",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/factories/transaction.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/factories/order.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/address.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_shipping.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/helpers/orders_helper.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/index.html.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/helpers/products_helper.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/authentication_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/signin_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/controllers/sessions_controller.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/services/session_validator.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/sessions/new.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/sessions/_form.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/sessions/_form.old",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/sessions/new.old",
+		"/media/tpryan/Applications/RailsProjects/SCA/todo.txt",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/controllers/carts_controller.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/invoice_email_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/invoice_checkout_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/cart.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/user_mailer/invoice.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/mailers/user_mailer.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/services/token_generator.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/mailers/previews/user_mailer_preview.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/_invoice_header.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/new_invoice.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/factories/cart.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/show.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/_cart.html.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/line_items/_update.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/_totals.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/_line_item.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/new_invoice.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/user_mailer/invoice.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/user_mailer/invoice.text.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/db/migrate/20170501014531_add_retrieved_at_to_carts.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/db/migrate/20170430234019_add_invoice_token_to_carts.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/user.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/services/invoice_validator.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/products/show.html.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/carts/_cart.old",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/user_mailer/order_shipped.text.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/get_tracking_number.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/component_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/bom_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/faqs_category_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/product_category_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/spec/features/user_pages_spec.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/checkout/confirmation/new.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/static_pages/admin.html.haml",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/show.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/static_pages/terms.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/orders/_token.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/models/transaction.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/config/environments/test.rb",
+		"/media/tpryan/Applications/RailsProjects/SCA/README.rdoc",
+		"/media/tpryan/Applications/RailsProjects/SCA/app/views/user_mailer/order_received.html.erb",
+		"/media/tpryan/Applications/RailsProjects/SCA/config/application.yml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/",
+			"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/",
+			"/media/tpryan/Applications/FreeCodeCamp/nightlife-app/app/models",
+			"/media/tpryan/Applications/RailsProjects/SCA/app",
+			"/media/tpryan/Applications/RailsProjects/SCA",
+			"/media/tpryan/Applications/RailsProjects/SCA/app/assets",
+			"/media/tpryan/Applications/RailsProjects/SCA/",
+			"/media/tpryan/Applications/RailsProjects/SCA/db/migrate",
+			"/media/tpryan/Applications/RailsProjects/SCA/",
+			"/media/tpryan/Applications/RailsProjects/SCA/app",
+			"/media/tpryan/Applications/LinuxRails/SCA/",
+			"/media/tpryan/Applications/LinuxRails/SCA/app/",
+			"/media/tpryan/Applications/LinuxRails/SCA/app/assets/stylesheets",
+			"",
+			"/media/tpryan/Applications/LinuxRails/SCA",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"bars",
+			"Patron",
+			"bars",
+			"searchBars",
+			"Bar",
+			"voteUrl",
+			"bar",
+			"bars",
+			"bar_id",
+			"bar",
+			"bars",
+			"methods",
+			"patron",
+			"Patron",
+			"Bar",
+			"YELP",
+			"YELP_KEY",
+			"isLoggedIn",
+			"barHandler",
+			"BarHandler",
+			"nightlife",
+			"MONGO_URI",
+			"MONGODB_URI",
+			"YAHOO",
+			"YAHOO_KEY",
+			"YAHOO",
+			"YAHOO_KEY",
+			"errorCallback",
+			"callback",
+			"bars",
+			"getBars",
+			"voteUrl2",
+			"model",
+			"bars",
+			"doc",
+			"String",
+			"panel",
+			"#bs-example-navbar-collapse-1",
+			"cors",
+			"github",
+			"isLoggedIn",
+			"github",
+			"GITHUB",
+			"github",
+			"configAuth",
+			"GitHubStrategy",
+			"passport",
+			"index",
+			"bar_id",
+			"name",
+			"getBars",
+			"findLocalBars",
+			"updatePatronCount",
+			"model",
+			"this",
+			"model",
+			"configAuth",
+			"votes",
+			"updateVoteCount",
+			"option",
+			"options",
+			"ajaxFunctions",
+			"voteUrl",
+			"model",
+			"user",
+			"/' + 'Batman",
+			"bar_2",
+			"poll_id",
+			"votes",
+			"options",
+			"votes",
+			"result",
+			"poll",
+			"poll_id",
+			"Vote",
+			"polls",
+			"poll_id",
+			"polls",
+			"Poll",
+			"getPolls",
+			"pollHandler",
+			"PollHandler",
+			"polls",
+			"Poll",
+			"PollHandler",
+			"poll_id",
+			"poll",
+			"polls",
+			"business",
+			"mongoose",
+			"Poll",
+			"voting-app",
+			"poll_2",
+			"poll_1",
+			"Poll",
+			"polls",
+			"order.billing_address.",
+			"values",
+			"stripe_purchase_options",
+			"values",
+			".%F",
+			"dbname",
+			"$height",
+			"model",
+			"#",
+			"</td>",
+			"<%=",
+			"\">",
+			"<td.",
+			" %>",
+			"<% ",
+			"<%",
+			"<th",
+			" id=\"",
+			"<tr",
+			"\">",
+			"class=\"",
+			" %></td></tr>",
+			"<td>",
+			"<tr>",
+			"class=\"",
+			"dark-contrast",
+			"dark",
+			".field",
+			"15px",
+			".field",
+			"dark",
+			"large"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"faq_category",
+			"faq",
+			"FAQ",
+			"edit_product_category_path",
+			"product_categories_path",
+			"product category",
+			"ProductCategory",
+			"Product Category",
+			"product_category",
+			"@cart.line_items_empty?",
+			"cart_purchased_redirect",
+			"_path",
+			"feature",
+			"brown-85",
+			"brown-20",
+			"brown-17",
+			"brown-30",
+			"brown-40",
+			"brown-60",
+			"brown-50",
+			"brown-70",
+			"brown-80",
+			"brown-90",
+			"brown-60",
+			"brown-20",
+			"brown-10",
+			"brown-00",
+			"",
+			"rails_helper",
+			"matrix.print_2",
+			"href=\"#"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								958,
+								958
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/etc/systemd/system/mongodb.service",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/routes/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								534,
+								534
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/stockHandler.server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								822,
+								822
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/stockController.client.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								176,
+								176
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1206.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/stock.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1667,
+								1667
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/layout/layout.pug",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								965,
+								965
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pug/Syntaxes/Pug.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "stockchart-app.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"user_s",
+				"spec/models/user_spec.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				".css",
+				"app/assets/stylesheets/custom.css.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
