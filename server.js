@@ -19,6 +19,7 @@ else
 
 mongoose.Promise = global.Promise;
 
+app.set('title', 'FCC Stock Chart App');
 app.set('view engine', 'pug');
 app.set('views',  path.join(__dirname, 'app/views'));
 
@@ -40,7 +41,7 @@ routes(app);
 
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {
-	console.log('Node.js listening on port ' + port + '...');
+  console.log('Node.js listening on port ' + port + '...');
 });
 
 module.exports = app;

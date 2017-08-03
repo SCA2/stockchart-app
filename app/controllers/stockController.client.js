@@ -3,14 +3,10 @@
 (function () {
 
   var exampleSocket;
-
   var seriesOptions = []
-      // seriesCounter = 0,
-      // names = ['MSFT', 'AAPL', 'GOOG'];
 
   function stocksUrl() { return window.location.origin + '/api/stocks' }
   function socketUrl() { return 'ws:' + window.location.host + '/socket' }
-// "ws://www.example.com/socketserver", "protocolOne"
 
   /**
    * Create the chart when all data is loaded
@@ -55,23 +51,26 @@
     });
   }
 
-  // $.each(names, function (i, name) {
-  //   $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
-  //     console.log(data)
-  //     seriesOptions[i] = {
-  //       name: name,
-  //       data: data
-  //     };
-
-  //     // As we're loading the data asynchronously, we don't know what order it will arrive. So
-  //     // we keep a counter and create the chart when all the data is loaded.
-  //     seriesCounter += 1;
-
-  //     if (seriesCounter === names.length) {
-  //       createChart();
-  //     }
-  //   });
-  // });
+  function createCards(stocks) {
+    let stockGroup = document.getElementById('stock-group');
+    let newGroup = "";
+    stocks.forEach(stock => {
+      console.log(stock.ticker + ', ' + stock._id)
+      let newCard = `
+        <div class="card">
+          <div class="card-block">
+            <form action="/api/stocks/${stock._id}?_method=DELETE" method="POST">
+              <button class="close" type="submit" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h6>${stock.ticker}</h6>
+            </form>
+          </div>
+        </div>`;
+      newGroup += newCard;
+    });
+    stockGroup.innerHTML = newGroup;
+  };
 
   function loadstocks(stocks) {
     stocks = JSON.parse(stocks);
@@ -81,9 +80,9 @@
         data: stock.prices
       };
     });
-
+    createCards(stocks);
     createChart();
-  }
+  };
 
   ajaxFunctions.ready(() => {
     ajaxFunctions.ajaxRequest('GET', stocksUrl(), loadstocks, () => {});
@@ -91,13 +90,14 @@
     exampleSocket = new WebSocket(socketUrl());
 
     exampleSocket.onmessage = function (event) {
-      console.log(event.data);
-      var msg = JSON.parse(event.data);
-      switch(msg.type) {
+      var msg = event.data;
+      switch(msg) {
         case 'createStock' : 
+          console.log(msg);
           ajaxFunctions.ajaxRequest('GET', stocksUrl(), loadstocks, () => {});
           break;
         case 'deleteStock' : 
+          console.log(msg);
           ajaxFunctions.ajaxRequest('GET', stocksUrl(), loadstocks, () => {});
           break;
       }

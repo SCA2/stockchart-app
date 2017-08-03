@@ -5,7 +5,7 @@ var StockHandler = require(path + '/app/controllers/stockHandler.server.js');
 
 module.exports = function (app) {
 
-  var stockHandler = new StockHandler();
+  var stockHandler = new StockHandler(app);
 
   app.route('/')
     .get(function (req, res) {
@@ -18,7 +18,9 @@ module.exports = function (app) {
   app.route('/create')
     .post(stockHandler.createStock);
 
-  app.route('/socket')
+  app.ws('/socket', function(ws, req) {
+      console.log('connected');
+  });
 
   app.route('/api/stocks/:stock_id')
     .get(stockHandler.getPriceData)

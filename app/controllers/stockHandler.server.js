@@ -1,8 +1,12 @@
 'use strict';
 
-var Stock = require('../models/stock');
+const Stock = require('../models/stock');
 
-function stockHandler() {
+function stockHandler(app) {
+
+  const expressws = require('express-ws')(app);
+  const wss = expressws.getWss('/socket');
+
   this.index = (req, res) => {
     Stock.getStocks(stocks => {
       res.render('../views/stocks/index.pug', { stocks: stocks });
@@ -10,14 +14,16 @@ function stockHandler() {
   };
 
   this.createStock = (req, res) => {
-    console.log(req.body.ticker);
     Stock
       .createStock(req.body.ticker, (stock) => {
         stock.getPriceData(apiPriceData => {
           stock.filterPriceData(apiPriceData, prices => {
             stock.updatePrices(prices, stock => {
-              // console.log(stock.prices)
+              console.log('created ' + stock.ticker);
               res.redirect('/index');
+              wss.clients.forEach((client) => {
+                client.send('createStock');
+              });
             })
           })
         });
@@ -25,11 +31,13 @@ function stockHandler() {
   };
 
   this.deleteStock = (req, res) => {
-    console.log('in deleteStock');
     Stock
       .deleteStock(req.params.stock_id, stock => {
         console.log('deleted ' + stock.ticker);
         res.redirect('/index');
+        wss.clients.forEach((client) => {
+          client.send('deleteStock');
+        });
       });
   };
 
