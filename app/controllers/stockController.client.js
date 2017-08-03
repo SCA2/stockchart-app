@@ -6,7 +6,7 @@
   var seriesOptions = []
 
   function stocksUrl() { return window.location.origin + '/api/stocks' }
-  function socketUrl() { return 'ws:' + window.location.host + '/socket' }
+  function socketUrl() { return 'wss:' + window.location.host + '/socket' }
 
   /**
    * Create the chart when all data is loaded
