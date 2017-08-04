@@ -1,3 +1,6 @@
 node_modules/
 .eslintrc
 .env
+server.crt
+server.csr
+server.key

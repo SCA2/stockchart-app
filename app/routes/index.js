@@ -18,7 +18,7 @@ module.exports = function (app) {
   app.route('/create')
     .post(stockHandler.createStock);
 
-  app.wss('/socket', function(ws, req) {
+  app.ws('/socket', function(ws, req) {
       console.log('connected');
   });
 

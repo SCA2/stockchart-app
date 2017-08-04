@@ -87,6 +87,7 @@
   ajaxFunctions.ready(() => {
     ajaxFunctions.ajaxRequest('GET', stocksUrl(), loadstocks, () => {});
 
+    console.log(socketUrl());
     exampleSocket = new WebSocket(socketUrl());
 
     exampleSocket.onmessage = function (event) {
