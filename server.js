@@ -3,8 +3,8 @@
 var express = require('express');
 var app = express();
 
-const https = require('https');
-const fs = require('fs');
+// const https = require('https');
+// const fs = require('fs');
 
 var path = require('path');
 var routes = require('./app/routes/index.js');
@@ -13,13 +13,14 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-const options = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
-};
+// const options = {
+//   key: fs.readFileSync('key.pem'),
+//   cert: fs.readFileSync('cert.pem')
+// };
 
-const httpServer = https.createServer(options, app);
-const expressws = require('express-ws')(app, httpServer);
+// const httpServer = https.createServer(options, app);
+// const expressws = require('express-ws')(app, httpServer);
+const expressws = require('express-ws')(app);
 const wss = expressws.getWss('/socket');
 
 require('dotenv').load();
@@ -52,7 +53,8 @@ app.use(methodOverride('_method'));
 routes(app, wss);
 
 var port = process.env.PORT || 8080;
-httpServer.listen(port,  function () {
+// httpServer.listen(port,  function () {
+app.listen(port,  function () {
   console.log('Node.js listening on port ' + port + '...');
 });
 
