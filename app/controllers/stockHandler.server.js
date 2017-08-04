@@ -1,19 +1,7 @@
 'use strict';
 
 const Stock = require('../models/stock');
-const https = require('https');
-const fs = require('fs');
-
-function stockHandler(app) {
-
-  const options = {
-    key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.crt')
-  };
-  
-  const server = https.createServer(options, app);
-  const expressws = require('express-ws')(app, server);
-  const wss = expressws.getWss('/socket');
+function stockHandler(app, wss) {
 
   this.index = (req, res) => {
     Stock.getStocks(stocks => {

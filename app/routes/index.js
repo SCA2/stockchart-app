@@ -3,9 +3,9 @@
 var path = process.cwd();
 var StockHandler = require(path + '/app/controllers/stockHandler.server.js');
 
-module.exports = function (app) {
+module.exports = function (app, wss) {
 
-  var stockHandler = new StockHandler(app);
+  var stockHandler = new StockHandler(app, wss);
 
   app.route('/')
     .get(function (req, res) {
@@ -19,7 +19,7 @@ module.exports = function (app) {
     .post(stockHandler.createStock);
 
   app.ws('/socket', function(ws, req) {
-      console.log('connected');
+    console.log('connected');
   });
 
   app.route('/api/stocks/:stock_id')
